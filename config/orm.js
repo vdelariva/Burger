@@ -1,4 +1,5 @@
-require ("./connection.js")
+console.log("load orm.js")
+var connection = require ("./connection.js")
 
 // SQL commands
 
@@ -28,17 +29,17 @@ var orm = {
 }
 // ____________________________________________________________________________________
 
-function objToSql(ob) {
+function objToSql(obj) {
   // Convert object to SQL query format
 	// column1=value, column2=value2,...
 	var arr = [];
 
-	for (var key in ob) {
-		if (ob.hasOwnProperty(key)) {
-			arr.push(`${key} = ${ob[key]}`);
+	for (var key in obj) {
+		if (obj.hasOwnProperty(key)) {
+			arr.push(`${key} = ${obj[key]}`);
 		}
   }
-  
+  // Convert array to string for SQL query
 	return arr.toString();
 }
 // ____________________________________________________________________________________

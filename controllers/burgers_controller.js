@@ -1,4 +1,4 @@
-
+console.log(`load burgers.controller`);
 var express = require("express");
 var router = express.Router();
 var burger = require("../models/burger.js");
@@ -8,7 +8,6 @@ router.get("/", function(req, res) {
   // Get all burger data from db
   burger.all(function(data){
     res.render("index", {burgers:data});
-
   });
 });
 
@@ -31,4 +30,4 @@ router.put("/update/:id", function(req, res){
   });
 });
 
-modules.export = router;
+module.exports = router;
