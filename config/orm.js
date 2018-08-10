@@ -1,4 +1,3 @@
-console.log("load orm.js")
 var connection = require ("./connection.js")
 
 // SQL commands
@@ -11,8 +10,8 @@ var orm = {
       cb(result);
     });
   },
-  insertOne: function(table, burger_name, cb) {
-    var queryString = `INSERT INTO ${table} (burger_name) VALUES (${burger_name};`;
+  insertOne: function(table, colKey, colValue, cb) {
+    var queryString = `INSERT INTO ${table} (${colKey}) VALUES (${colValue};`;
     connection.query(queryString, function(err,result){
       if (err) throw err;
       cb(result);

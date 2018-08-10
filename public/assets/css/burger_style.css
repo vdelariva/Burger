@@ -1,0 +1,7 @@
+.jumbotron {
+  /* background-color: tan; */
+  color: green;
+  /* background-image: url(../img/burgerBg.png); */
+  background-repeat: no-repeat;
+  background-position: center;
+}

@@ -1,18 +1,45 @@
-<h1>Eat Da Burger!</h1>
+<div class = "container">
+	<div class = "jumbotron">
+		<div class = "jumbotrondiv">
+			<div><h1 class="text-center">Burger Frenzy!</h1></div>
+			<hr>
+			<div><h2 class ="text-center">Select a burger to enjoy</h2></div>
+		</div>
+	</div>
 
-<h3>Which burger would you like to eat?</h3>
+	{{!-- Available Burgers --}}
+	<div class="row">
+		<div class="col-md">
+			{{#each burgers}}
+				{{#unless devoured}}
+					{{> burgers/burger-block eaten=false}}
+				{{/unless}}
+			{{/each}}
+		</div>
 
-<ul>
-  {{#each burgers}}
-  	<li>
-  	   <p>ID: {{this.id}}</p>
-       <p>Burger: {{this.burger_name}}</p>
-  	</li>
-  {{/each}}
-</ul>
+		{{!-- Burgers that have been devoured --}}
+		<div class="col-md">
+			{{#each burgers}}
+				{{#if devoured}}
+					{{> burgers/burger-block eaten=true}}
+				{{/if}}
+			{{/each}}
+		</div>
+	</div>
 
-<form action="/" method="POST">
-	<textarea type="text" name="burger_name"></textarea>
-
-	<button type="submit">Submit</button>
-</form>
+	{{!-- Add a burger --}}
+	<div class="row">
+		<form class="create-form">
+			<div class="form-row align-items-center">
+				<div class="col-auto">
+					{{!-- <label for="burgerInput">Add a Burger</label> --}}
+					<input type="text" class="form-control mb-2" id="burgerInput" placeholder="Classic Burger">
+				</div>
+				<div class="col-auto">
+      		<button type="submit" class="btn btn-primary mb-2">Add Burger</button>
+    		</div>
+  		</div>
+		</form>
+	</div>
+	{{!-- <p><a href="/api/friends">API Friends Link</a> | <a href="https://github.com/vdelariva/FriendFinder">GitHub Repo</a></p> --}}
+</div>

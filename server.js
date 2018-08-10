@@ -8,7 +8,7 @@ var bodyParser = require("body-parser");
 // ____________________________________________________________________________________
 
 var app = express();
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 8000;
 
 
 // Setup the Express app to handle data parsing
@@ -23,6 +23,9 @@ var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
+// Setup access to static assets, specifically app.js
+app.use(express.static('public'))
 
 // Setup Routes
 var routes = require("./controllers/burgers_controller");
