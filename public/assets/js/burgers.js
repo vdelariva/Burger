@@ -1,6 +1,8 @@
 // Static JS
 
-$(".create-form").on("submit", function(event) {
+$(".add-burger").on("click", function(event) {
+// $(".create-form").on("submit", function(event) {
+
   event.preventDefault();
 
   // Add a new burger to the list

@@ -1,7 +1,12 @@
 .jumbotron {
   /* background-color: tan; */
   color: green;
-  /* background-image: url(../img/burgerBg.png); */
+  background-image: url(../img/burger/512x512.png);
   background-repeat: no-repeat;
   background-position: center;
+  font-size: 6rem;
+}
+body {
+  font-family: 'Cherry Cream Soda', cursive;
+  font-size: 2rem;
 }

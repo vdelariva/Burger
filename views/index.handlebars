@@ -2,13 +2,11 @@
 	<div class = "jumbotron">
 		<div class = "jumbotrondiv">
 			<div><h1 class="text-center">Burger Frenzy!</h1></div>
-			<hr>
-			<div><h2 class ="text-center">Select a burger to enjoy</h2></div>
 		</div>
 	</div>
 
 	{{!-- Available Burgers --}}
-	<div class="row">
+	<div class="row style="width:80%;">
 		<div class="col-md">
 			{{#each burgers}}
 				{{#unless devoured}}
@@ -28,15 +26,15 @@
 	</div>
 
 	{{!-- Add a burger --}}
-	<div class="row">
-		<form class="create-form">
+	<div class="row  d-flex justify-content-center align-items-center">
+		<form>
 			<div class="form-row align-items-center">
 				<div class="col-auto">
-					{{!-- <label for="burgerInput">Add a Burger</label> --}}
-					<input type="text" class="form-control mb-2" id="burgerInput" placeholder="Classic Burger">
+					<input type="text" class="form-control form-control-lg mb-2" id="burgerInput" placeholder="Classic Burger">
 				</div>
-				<div class="col-auto">
-      		<button type="submit" class="btn btn-primary mb-2">Add Burger</button>
+				<div class="col">
+      		{{!-- <button type="submit" class="btn btn-primary mb-2">Add Burger</button> --}}
+					<img class="add-burger" src="assets/img/plusFlat/64x64.png">
     		</div>
   		</div>
 		</form>
