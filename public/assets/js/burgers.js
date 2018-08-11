@@ -3,11 +3,10 @@
 $(".create-form").on("submit", function(event) {
   event.preventDefault();
 
+  // Add a new burger to the list
   var newBurger = {
-    name: $("#burgerInput").val().trim(),
+    burger_name: $("#burgerInput").val().trim(),
   };
-
-  console.log(`new burger: ${JSON.stringify(newBurger)}`)
 
   // Send the POST request.
   $.ajax("/api/burgers", {
@@ -24,12 +23,14 @@ $(".create-form").on("submit", function(event) {
 
 $(".eat-burger").on("click", function(event) {
   var id = $(this).data("id");
+  var eaten = {devoured: true};
 
-  console.log(`delete id = ${id}`)
+  console.log(`update id = ${id}`)
 
   // Send the PUT request.
   $.ajax(`/api/burgers/${id}`, {
-    type: "PUT"
+    type: "PUT",
+    data: eaten
   }).then(
     function() {
       console.log("Updated Burger", id);
