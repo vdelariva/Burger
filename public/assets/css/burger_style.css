@@ -10,3 +10,6 @@ body {
   font-family: 'Cherry Cream Soda', cursive;
   font-size: 2rem;
 }
+.eat-burger:hover, .add-burger:hover {
+  opacity: 0.8;
+}
