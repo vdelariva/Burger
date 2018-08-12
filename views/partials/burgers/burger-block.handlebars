@@ -1,5 +1,5 @@
 {{#if eaten}}
-	<p><img src="assets/img/minusFlat/64x64.png"> {{burger_name}}</p>
+	<p><img src="assets/img/minusFlat/64x64.png"> {{burger_name}} <img data-id="{{this.id}}" class="delete-burger" align="right" src="assets/img/trash/32x32.png"</p>
 {{else}}
 	<p><img data-id="{{this.id}}" class="eat-burger" src="assets/img/eatFlat/64x64.png"> {{burger_name}}</p>
 {{/if}}
